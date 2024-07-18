@@ -17,6 +17,12 @@ Execute
 $ node dist/main.js
 ```
 
+## Get latest RGB image
+connet to robot's local hotspot network, password: ```12345678```
+```
+$ ./get_image.sh
+```
+
 ## References
 - SDK DOC: https://autoxingtech.github.io/axdoc/
 - SDK Example: http://service.autoxing.com/sdk/v1.0/example/
