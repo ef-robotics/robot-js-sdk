@@ -4,11 +4,10 @@ import FormData from "form-data";
 
 async function authenticate(): Promise<string> {
   const response = await axios.post(
-    "https://dairy.intrtl.tech/api/v2/auth/login",
+    "https://poc.intrtl.com/api/v2/auth/login",
     {
-      login: "your_login", // required
-      password: "your_password", //required
-      external_user_id: "your_external_user_id",
+      login: "efrobotics.poc", // required
+      password: "efrobotics1" //required
     },
     {
       headers: {
@@ -46,7 +45,7 @@ async function sendImageStream(token: string, imageStream: Buffer) {
     contentType: "image/jpeg",
   });
 
-  await axios.post("https://dairy.intrtl.com/api/v2/photos/", form, {
+  await axios.post("https://demo.intrtl.com/api/v2/photos/", form, {
     headers: {
       Authorization: `Bearer ${token}`,
       ...form.getHeaders(),
@@ -54,34 +53,6 @@ async function sendImageStream(token: string, imageStream: Buffer) {
   });
 }
 
-// async function main() {
-//   // create an instance of AXRobot
-//   const axRobot = new AXRobot(
-//     "appid",
-//     "appsecret",
-//     AppMode.WAN_APP,
-//     "https://apiglobal.autoxing.com/",
-//     "wss://serviceglobal.autoxing.com/"
-//   );
-
-//   // Initialize the AXRobot instance
-//   const success = await axRobot.init();
-//   if (success) {
-//     try {
-//       // connect to the specified robot
-//       const res = await axRobot.connectRobot({
-//         robotId: "robotid",
-//       });
-//       console.log("connect success: " + res.robotId);
-//       // do something with robot
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   } else {
-//     console.log("failed");
-//     // initialization failed
-//   }
-// }
 async function main() {
   try {
     const token = await authenticate();
