@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "16389ee2-a240-4b64-9cf1-21e871027afd",
+		"name": "Demo - Ailet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35090891",
+		"_collection_link": "https://ailet1.postman.co/workspace/Ailet-Workspace~fcd14661-4f39-45a9-b24b-59662581b74a/collection/35090891-16389ee2-a240-4b64-9cf1-21e871027afd?action=share&source=collection_link&creator=35090891"
+	},
+	"item": [
+		{
+			"name": "01-Auth Demo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "ac63978b-3ded-4333-99f2-1e07c573f83a",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n  \"login\": \"efrobotics.poc\",\n  \"password\": \"efrobotics1\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://poc.intrtl.com/api/v2/auth/login",
+					"protocol": "https",
+					"host": [
+						"poc",
+						"intrtl",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02-POST Photo Demo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "73cdbc5d-3aa8-4bd6-94c5-5b2b96e58802",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "photo_data",
+							"type": "file",
+							"src": "/Users/sebastianibarrola/Desktop/energizantes.png"
+						},
+						{
+							"key": "visit_id",
+							"value": "test-seba-8",
+							"type": "text"
+						},
+						{
+							"key": "photo_id",
+							"value": "test-seba-8",
+							"type": "text"
+						},
+						{
+							"key": "scene_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "external_store_id",
+							"value": "10001",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://demo.intrtl.com/api/v2/photos/",
+					"protocol": "https",
+					"host": [
+						"demo",
+						"intrtl",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"photos",
+						""
+					],
+					"query": [
+						{
+							"key": "visit_id",
+							"value": "63ceea7c06ff1-5882",
+							"disabled": true
+						},
+						{
+							"key": "photo_id",
+							"value": "63bfb7ff0f7hg-q753df43",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03-Get Visit Result Demo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "336dd254-154b-4181-881c-3390c156bbb6",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://demo.intrtl.com/api/v2/visits/:visit_id/result",
+					"protocol": "https",
+					"host": [
+						"demo",
+						"intrtl",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"visits",
+						":visit_id",
+						"result"
+					],
+					"variable": [
+						{
+							"key": "visit_id",
+							"value": "custom_visit_19245a7"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
